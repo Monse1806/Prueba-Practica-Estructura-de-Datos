@@ -8,6 +8,7 @@
 #include "listas.h"
 #include "logica.h"
 using namespace std;
+
 // definiciones del terreno 
 #define MAP_ROWS 8
 #define MAP_COLS 21
