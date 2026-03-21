@@ -82,14 +82,14 @@ El sistema utiliza una representación en consola:
 ## Informe del proyecto
 El informe completo se encuentra en el siguiente enlace:
 
-👉 https://utaedu-my.sharepoint.com/:b:/g/personal/jr_caiza_uta_edu_ec/IQDzU42fb1dWQKvfLtPp0kmKAdH_RlankomS6yVPZmUbGEU?e=tbAb10
+https://utaedu-my.sharepoint.com/:b:/g/personal/jr_caiza_uta_edu_ec/IQDzU42fb1dWQKvfLtPp0kmKAdH_RlankomS6yVPZmUbGEU?e=tbAb10
 
 
 
 ## Estado del proyecto
-✔ Proyecto funcional  
-✔ Integración completa de ramas  
-✔ Simulación operativa  
+- Proyecto funcional  
+- Integración completa de ramas  
+- Simulación operativa  
 
 
 
