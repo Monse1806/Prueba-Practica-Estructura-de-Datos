@@ -10,14 +10,14 @@ El objetivo del juego es defender una base del avance de enemigos mediante la co
 ## Objetivo General
 Desarrollar un sistema de juego tipo Tower Defense en C++ que permita aplicar estructuras de datos como listas secuenciales, listas doblemente enlazadas y listas circulares.
 
----
+
 
 ## Estructuras de Datos utilizadas
 - Lista secuencial → gestión de torres  
 - Lista doblemente enlazada → enemigos activos  
 - Lista circular → control de oleadas  
 
----
+
 
 ## Funcionalidades principales
 - Registro, visualización y eliminación de torres  
@@ -28,7 +28,7 @@ Desarrollar un sistema de juego tipo Tower Defense en C++ que permita aplicar es
 - Visualización del mapa en consola  
 - Menú interactivo  
 
----
+
 
 ## Mecánica del juego
 - Los enemigos avanzan desde la posición 0 hasta la 20  
@@ -36,7 +36,7 @@ Desarrollar un sistema de juego tipo Tower Defense en C++ que permita aplicar es
 - Si un enemigo llega al final → el jugador pierde una vida  
 - El juego termina cuando las vidas llegan a 0  
 
----
+
 
 ## Tipos de torres
 - Arquero  
@@ -44,7 +44,7 @@ Desarrollar un sistema de juego tipo Tower Defense en C++ que permita aplicar es
 - Mago  
 - Torre personalizada  
 
----
+
 
 ## Tipos de enemigos
 - Básico  
@@ -62,7 +62,7 @@ El sistema utiliza una representación en consola:
 - `[S]` inicio  
 - `[B]` base  
 
----
+
 
 ## Integrantes
 - Katherine Moyolema  
@@ -70,28 +70,28 @@ El sistema utiliza una representación en consola:
 - Alina Ortiz  
 - Monserrath Medina  
 
----
+
 
 ## Información académica
 - Universidad Técnica de Ambato  
 - Carrera: Software  
 - Asignatura: Estructura de Datos  
 
----
+
 
 ## Informe del proyecto
 El informe completo se encuentra en el siguiente enlace:
 
 👉 https://utaedu-my.sharepoint.com/:b:/g/personal/jr_caiza_uta_edu_ec/IQDzU42fb1dWQKvfLtPp0kmKAdH_RlankomS6yVPZmUbGEU?e=tbAb10
 
----
+
 
 ## Estado del proyecto
 ✔ Proyecto funcional  
 ✔ Integración completa de ramas  
 ✔ Simulación operativa  
 
----
+
 
 ## Tecnologías usadas
 - C++  
