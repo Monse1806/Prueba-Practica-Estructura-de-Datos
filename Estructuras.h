@@ -1,14 +1,8 @@
 #ifndef ESTRUCTURAS_H
 #define ESTRUCTURAS_H
-
 #include <string>
 using namespace std;
-
-// ============================================================
-//  PERSONA 1 - ESTRUCTURAS DE DATOS BASE
-//  Archivo: estructuras.h
-// ============================================================
-
+// Estructuras 
 struct Torre {
     int id;
     string nombre;
