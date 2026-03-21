@@ -51,7 +51,7 @@ Desarrollar un sistema de juego tipo Tower Defense en C++ que permita aplicar es
 - Rápido  
 - Fuerte  
 
----
+
 
 ## Interfaz
 El sistema utiliza una representación en consola:
