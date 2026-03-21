@@ -8,12 +8,6 @@
 #include "estructuras.h"
 #include "listas.h"
 using namespace std;
-
-// ============================================================
-//  PERSONA 3 - LOGICA DEL JUEGO
-//  Archivo: logica.h
-// ============================================================
-
 void limpiarPantalla() {
 #ifdef _WIN32
     system("cls");
@@ -27,10 +21,7 @@ void pausar() {
     cin.ignore();
     cin.get();
 }
-
-// ------------------------------------------------------------
 //  OPCION 1: REGISTRAR TORRE
-// ------------------------------------------------------------
 void registrarTorre(ListaTorres& torres, Juego& j) {
     limpiarPantalla();
     cout << endl << "  === REGISTRAR TORRE ===" << endl << endl;
@@ -82,10 +73,7 @@ void registrarTorre(ListaTorres& torres, Juego& j) {
     }
     pausar();
 }
-
-// ------------------------------------------------------------
 //  OPCION 3: ELIMINAR TORRE
-// ------------------------------------------------------------
 void eliminarTorre(ListaTorres& torres) {
     limpiarPantalla();
     cout << endl << "  === ELIMINAR TORRE ===" << endl << endl;
@@ -100,9 +88,7 @@ void eliminarTorre(ListaTorres& torres) {
     pausar();
 }
 
-// ------------------------------------------------------------
 //  OPCION 4: REGISTRAR OLEADA
-// ------------------------------------------------------------
 void registrarOleada(ListaOleadas& oleadas) {
     limpiarPantalla();
     cout << endl << "  === REGISTRAR OLEADA ===" << endl << endl;
@@ -119,9 +105,7 @@ void registrarOleada(ListaOleadas& oleadas) {
     pausar();
 }
 
-// ------------------------------------------------------------
 //  OPCION 6: INICIAR SIGUIENTE OLEADA
-// ------------------------------------------------------------
 void iniciarSiguienteOleada(ListaOleadas& oleadas, ListaEnemigos& enemigos) {
     limpiarPantalla();
     cout << endl << "  === INICIAR OLEADA ===" << endl << endl;
@@ -153,9 +137,7 @@ void iniciarSiguienteOleada(ListaOleadas& oleadas, ListaEnemigos& enemigos) {
     pausar();
 }
 
-// ------------------------------------------------------------
 //  OPCION 7: AVANZAR TURNO
-// ------------------------------------------------------------
 void avanzarTurno(ListaTorres& torres, ListaEnemigos& enemigos, Juego& j) {
     limpiarPantalla();
     j.turno++;
