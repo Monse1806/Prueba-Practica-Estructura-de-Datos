@@ -7,14 +7,7 @@
 #include "estructuras.h"
 using namespace std;
 
-// ============================================================
-//  PERSONA 2 - LAS 3 LISTAS DE DATOS
-//  Archivo: listas.h
-// ============================================================
-
-// ------------------------------------------------------------
 //  LISTA SECUENCIAL - TORRES
-// ------------------------------------------------------------
 class ListaTorres {
 private:
     static const int MAX = 100;
@@ -48,9 +41,7 @@ public:
     }
     void mostrar() const {
         if (tam == 0) { cout << "  (Sin torres)" << endl; return; }
-        cout << "  +----+----------------+----------+-----+-------+-------+------+" << endl;
         cout << "  | ID | Nombre         | Tipo     | Pos | Danio | Rango | Costo|" << endl;
-        cout << "  +----+----------------+----------+-----+-------+-------+------+" << endl;
         for (int i = 0; i < tam; i++) {
             const Torre& t = arreglo[i].dato;
             string icono = (t.tipo=="Arquero")?"[A]":(t.tipo=="Canon")?"[C]":(t.tipo=="Mago")?"[M]":"[T]";
@@ -62,17 +53,13 @@ public:
                  << "| " << setw(6)  << t.rango
                  << "| " << setw(5)  << t.costo << "| " << icono << endl;
         }
-        cout << "  +----+----------------+----------+-----+-------+-------+------+" << endl;
         cout << "  Torres activas: " << tam << endl;
     }
     int contar() const { return tam; }
     int getTam()  const { return tam; }
     Torre& get(int i) { return arreglo[i].dato; }
 };
-
-// ------------------------------------------------------------
 //  LISTA DOBLEMENTE ENLAZADA - ENEMIGOS
-// ------------------------------------------------------------
 class ListaEnemigos {
 private:
     NodoEnemigo* first;
@@ -111,9 +98,7 @@ public:
     }
     void recorrerAdelante() const {
         if (!first) { cout << "  (Sin enemigos activos)" << endl; return; }
-        cout << "  +----+----------+------+-----+-----+--------+" << endl;
         cout << "  | ID | Tipo     | Vida | Vel | Pos | Recomp |" << endl;
-        cout << "  +----+----------+------+-----+-----+--------+" << endl;
         NodoEnemigo* a = first;
         while (a) {
             const Enemigo& e = a->dato;
@@ -129,7 +114,6 @@ public:
                  << "| [" << barra << "]" << endl;
             a = a->next;
         }
-        cout << "  +----+----------+------+-----+-----+--------+" << endl;
     }
     void recorrerAtras() const {
         if (!last) return;
@@ -146,10 +130,7 @@ public:
     int  getTam()    const { return tam; }
     bool estaVacia() const { return first == NULL; }
 };
-
-// ------------------------------------------------------------
 //  LISTA CIRCULAR - OLEADAS
-// ------------------------------------------------------------
 class ListaOleadas {
 private:
     NodoOleada* ultimo;
@@ -173,9 +154,7 @@ public:
     }
     void mostrar() const {
         if (!ultimo) { cout << "  (Sin oleadas)" << endl; return; }
-        cout << "  +----+-------+----------+------+------+" << endl;
         cout << "  | ID | Cant  | Tipo     | Vida | Vel  |" << endl;
-        cout << "  +----+-------+----------+------+------+" << endl;
         NodoOleada* a = ultimo->next;
         for (int i = 0; i < tam; i++) {
             string marca = (a == oleadaActual) ? " <<" : "   ";
@@ -187,7 +166,6 @@ public:
                  << "|" << marca << endl;
             a = a->next;
         }
-        cout << "  +----+-------+----------+------+------+" << endl;
     }
     Oleada* getActual() { return oleadaActual ? &oleadaActual->dato : NULL; }
     void avanzar() {
