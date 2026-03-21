@@ -8,12 +8,7 @@
 #include "listas.h"
 #include "logica.h"
 using namespace std;
-
-// ============================================================
-//  PERSONA 4 - INTERFAZ, MAPA Y PANTALLAS
-//  Archivo: interfaz.h
-// ============================================================
-
+// definiciones del terreno 
 #define MAP_ROWS 8
 #define MAP_COLS 21
 #define PATH_ROW 5
@@ -35,10 +30,7 @@ int mapaBase[MAP_ROWS][MAP_COLS] = {
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 };
-
-// ------------------------------------------------------------
 //  DIBUJAR MAPA 2D
-// ------------------------------------------------------------
 void dibujarMapa(ListaTorres& torres, ListaEnemigos& enemigos, const Juego& j) {
     int mapa[MAP_ROWS][MAP_COLS];
     for (int r = 0; r < MAP_ROWS; r++)
@@ -82,31 +74,21 @@ void dibujarMapa(ListaTorres& torres, ListaEnemigos& enemigos, const Juego& j) {
     cout << "  Leyenda: [T]=Torre  [E]=Enemigo  [S]=Inicio  [B]=Base  [-]=Camino  [.]=Libre" << endl;
 }
 
-// ------------------------------------------------------------
 //  HUD (barra de estado)
-// ------------------------------------------------------------
 void mostrarHUD(const Juego& j) {
     string vidas = "";
     for (int i = 0; i < j.vidasJugador; i++) vidas += "<3 ";
     if (j.vidasJugador <= 0) vidas = "GAME OVER";
-
-    cout << "  +------------------+------------------+------------------+------------------+" << endl;
     cout << "  | TURNO: " << left << setw(10) << j.turno
          << "| VIDAS: "  << left << setw(10) << vidas
          << "| ORO: "    << left << setw(12) << j.oro
          << "| ELIM: "   << left << setw(10) << j.enemigosEliminados
          << "|" << endl;
-    cout << "  +------------------+------------------+------------------+------------------+" << endl;
 }
-
-// ------------------------------------------------------------
 //  MENU PRINCIPAL
-// ------------------------------------------------------------
 void mostrarMenu() {
     cout << endl;
-    cout << "  +------------------------------------------+" << endl;
     cout << "  |        TOWER DEFENSE  - MENU             |" << endl;
-    cout << "  +------------------------------------------+" << endl;
     cout << "  |  1 - Registrar torre defensiva           |" << endl;
     cout << "  |  2 - Mostrar torres registradas          |" << endl;
     cout << "  |  3 - Eliminar torre                      |" << endl;
@@ -117,36 +99,26 @@ void mostrarMenu() {
     cout << "  |  8 - Mostrar enemigos activos            |" << endl;
     cout << "  |  9 - Estado general del juego            |" << endl;
     cout << "  |  0 - Salir                               |" << endl;
-    cout << "  +------------------------------------------+" << endl;
+
     cout << endl << "  Input: ";
 }
-
-// ------------------------------------------------------------
 //  PANTALLA PRINCIPAL
-// ------------------------------------------------------------
 void mostrarPantallaPrincipal(ListaTorres& torres, ListaEnemigos& enemigos, const Juego& j) {
     limpiarPantalla();
     cout << endl;
-    cout << "  =============================================" << endl;
     cout << "   TOWER DEFENSE | Estructura de Datos C++    " << endl;
-    cout << "  =============================================" << endl;
     cout << endl;
     mostrarHUD(j);
     cout << endl;
     dibujarMapa(torres, enemigos, j);
     mostrarMenu();
 }
-
-// ------------------------------------------------------------
 //  OPCION 9: ESTADO GENERAL
-// ------------------------------------------------------------
 void mostrarEstadoGeneral(ListaTorres& torres, ListaEnemigos& enemigos,
                            ListaOleadas& oleadas, const Juego& j) {
     limpiarPantalla();
     cout << endl;
-    cout << "  +=============================================+" << endl;
     cout << "  |         ESTADO GENERAL DEL JUEGO           |" << endl;
-    cout << "  +=============================================+" << endl;
     cout << "  | Turno          : " << left << setw(27) << j.turno              << "|" << endl;
     cout << "  | Vidas          : " << left << setw(27) << j.vidasJugador       << "|" << endl;
     cout << "  | Oro            : " << left << setw(27) << j.oro                << "|" << endl;
@@ -159,7 +131,6 @@ void mostrarEstadoGeneral(ListaTorres& torres, ListaEnemigos& enemigos,
         cout << "  | Estado         : " << left << setw(27) << "ACTIVA"    << "|" << endl;
     else
         cout << "  | Estado         : " << left << setw(27) << "TERMINADA" << "|" << endl;
-    cout << "  +=============================================+" << endl;
 
     cout << endl << "  --- MAPA ACTUAL ---" << endl;
     dibujarMapa(torres, enemigos, j);
