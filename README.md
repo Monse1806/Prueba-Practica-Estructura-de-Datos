@@ -5,7 +5,7 @@ Este proyecto consiste en el desarrollo de un sistema de simulación del juego *
 
 El objetivo del juego es defender una base del avance de enemigos mediante la colocación estratégica de torres, aplicando estructuras de datos lineales.
 
----
+
 
 ## Objetivo General
 Desarrollar un sistema de juego tipo Tower Defense en C++ que permita aplicar estructuras de datos como listas secuenciales, listas doblemente enlazadas y listas circulares.
