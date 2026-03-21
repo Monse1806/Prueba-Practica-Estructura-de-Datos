@@ -1,25 +1,25 @@
-# 🎮 Proyecto: Tower Defense en C++
+# Proyecto: Tower Defense en C++
 
-## 📌 Descripción
+## Descripción
 Este proyecto consiste en el desarrollo de un sistema de simulación del juego **Tower Defense**, implementado en lenguaje C++.  
 
 El objetivo del juego es defender una base del avance de enemigos mediante la colocación estratégica de torres, aplicando estructuras de datos lineales.
 
 ---
 
-## 🎯 Objetivo General
+## Objetivo General
 Desarrollar un sistema de juego tipo Tower Defense en C++ que permita aplicar estructuras de datos como listas secuenciales, listas doblemente enlazadas y listas circulares.
 
 ---
 
-## 🧠 Estructuras de Datos utilizadas
-- 📦 Lista secuencial → gestión de torres  
-- 🔗 Lista doblemente enlazada → enemigos activos  
-- 🔄 Lista circular → control de oleadas  
+## Estructuras de Datos utilizadas
+- Lista secuencial → gestión de torres  
+- Lista doblemente enlazada → enemigos activos  
+- Lista circular → control de oleadas  
 
 ---
 
-## ⚙️ Funcionalidades principales
+## Funcionalidades principales
 - Registro, visualización y eliminación de torres  
 - Generación de oleadas de enemigos  
 - Simulación del juego por turnos  
@@ -30,7 +30,7 @@ Desarrollar un sistema de juego tipo Tower Defense en C++ que permita aplicar es
 
 ---
 
-## 🎮 Mecánica del juego
+## Mecánica del juego
 - Los enemigos avanzan desde la posición 0 hasta la 20  
 - Las torres atacan automáticamente según su rango  
 - Si un enemigo llega al final → el jugador pierde una vida  
@@ -38,7 +38,7 @@ Desarrollar un sistema de juego tipo Tower Defense en C++ que permita aplicar es
 
 ---
 
-## 🧩 Tipos de torres
+## Tipos de torres
 - Arquero  
 - Cañón  
 - Mago  
@@ -46,14 +46,14 @@ Desarrollar un sistema de juego tipo Tower Defense en C++ que permita aplicar es
 
 ---
 
-## 👾 Tipos de enemigos
+## Tipos de enemigos
 - Básico  
 - Rápido  
 - Fuerte  
 
 ---
 
-## 🖥️ Interfaz
+## Interfaz
 El sistema utiliza una representación en consola:
 - `.` espacios vacíos  
 - `-` camino  
@@ -64,7 +64,7 @@ El sistema utiliza una representación en consola:
 
 ---
 
-## 👨‍💻 Integrantes
+## Integrantes
 - Katherine Moyolema  
 - Rolando Miranda  
 - Alina Ortiz  
@@ -72,28 +72,28 @@ El sistema utiliza una representación en consola:
 
 ---
 
-## 🏫 Información académica
+## Información académica
 - Universidad Técnica de Ambato  
 - Carrera: Software  
 - Asignatura: Estructura de Datos  
 
 ---
 
-## 📄 Informe del proyecto
+## Informe del proyecto
 El informe completo se encuentra en el siguiente enlace:
 
 👉 https://utaedu-my.sharepoint.com/:b:/g/personal/jr_caiza_uta_edu_ec/IQDzU42fb1dWQKvfLtPp0kmKAdH_RlankomS6yVPZmUbGEU?e=tbAb10
 
 ---
 
-## 🚀 Estado del proyecto
+## Estado del proyecto
 ✔ Proyecto funcional  
 ✔ Integración completa de ramas  
 ✔ Simulación operativa  
 
 ---
 
-## 🛠️ Tecnologías usadas
+## Tecnologías usadas
 - C++  
 - Estructuras de datos  
 
