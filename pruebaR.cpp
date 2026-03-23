@@ -1,6 +1,3 @@
-#ifndef LOGICA_H
-#define LOGICA_H
-
 #include <iostream>
 #include <iomanip>
 #include <string>
