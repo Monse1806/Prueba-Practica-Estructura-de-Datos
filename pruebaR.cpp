@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -219,5 +220,3 @@ void avanzarTurno(ListaTorres& torres, ListaEnemigos& enemigos, Juego& j) {
 
     pausar();
 }
-
-#endif
