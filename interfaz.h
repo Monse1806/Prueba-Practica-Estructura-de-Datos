@@ -107,9 +107,8 @@ void mostrarHUD(const Juego& j) {
 // ------------------------------------------------------------
 void mostrarMenu() {
     cout << endl;
-    cout << "  +------------------------------------------+" << endl;
+
     cout << "  |        TOWER DEFENSE  - MENU             |" << endl;
-    cout << "  +------------------------------------------+" << endl;
     cout << "  |  1 - Registrar torre defensiva           |" << endl;
     cout << "  |  2 - Mostrar torres registradas          |" << endl;
     cout << "  |  3 - Eliminar torre                      |" << endl;
@@ -120,7 +119,6 @@ void mostrarMenu() {
     cout << "  |  8 - Mostrar enemigos activos            |" << endl;
     cout << "  |  9 - Estado general del juego            |" << endl;
     cout << "  |  0 - Salir                               |" << endl;
-    cout << "  +------------------------------------------+" << endl;
     cout << endl << "  Input: ";
 }
 
