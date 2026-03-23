@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -7,6 +6,7 @@
 #include "listas.h"
 #include "interfaz.h"
 using namespace std;
+
 void limpiarPantalla() {
 #ifdef _WIN32
     system("cls");
@@ -20,6 +20,7 @@ void pausar() {
     cin.ignore();
     cin.get();
 }
+
 //  OPCION 1: REGISTRAR TORRE
 void registrarTorre(ListaTorres& torres, Juego& j) {
     limpiarPantalla();
@@ -72,6 +73,15 @@ void registrarTorre(ListaTorres& torres, Juego& j) {
     }
     pausar();
 }
+
+//  OPCION 2: MOSTRAR TORRES
+void mostrarTorres(ListaTorres& torres) {
+    limpiarPantalla();
+    cout << endl << "  === TORRES REGISTRADAS ===" << endl << endl;
+    torres.mostrar();
+    pausar();
+}
+
 //  OPCION 3: ELIMINAR TORRE
 void eliminarTorre(ListaTorres& torres) {
     limpiarPantalla();
@@ -104,10 +114,25 @@ void registrarOleada(ListaOleadas& oleadas) {
     pausar();
 }
 
+//  OPCION 5: MOSTRAR OLEADAS
+void mostrarOleadas(ListaOleadas& oleadas) {
+    limpiarPantalla();
+    cout << endl << "  === OLEADAS REGISTRADAS ===" << endl << endl;
+    oleadas.mostrar();
+    pausar();
+}
+
 //  OPCION 6: INICIAR SIGUIENTE OLEADA
-void iniciarSiguienteOleada(ListaOleadas& oleadas, ListaEnemigos& enemigos) {
+void iniciarSiguienteOleada(ListaOleadas& oleadas, ListaEnemigos& enemigos, Juego& j) {
     limpiarPantalla();
     cout << endl << "  === INICIAR OLEADA ===" << endl << endl;
+    
+    if (!j.partidaActiva) {
+        cout << "  [!] El juego ha terminado. No se pueden iniciar nuevas oleadas." << endl;
+        pausar(); 
+        return;
+    }
+    
     if (oleadas.estaVacia()) {
         cout << "  No hay oleadas registradas." << endl;
         pausar(); return;
@@ -127,6 +152,7 @@ void iniciarSiguienteOleada(ListaOleadas& oleadas, ListaEnemigos& enemigos) {
         e.velocidad  = ola->velocidadBase;
         e.posicion   = 0;
         e.recompensa = ola->vidaBase / 10;
+        if (e.recompensa < 5) e.recompensa = 5;
         enemigos.insertarAlFinal(e);
         cout << "  >> Enemigo " << (i+1) << " [" << e.tipo
              << "] desplegado en pos 0" << endl;
@@ -136,9 +162,16 @@ void iniciarSiguienteOleada(ListaOleadas& oleadas, ListaEnemigos& enemigos) {
     pausar();
 }
 
-//  OPCION 7: AVANZAR TURNO
+//  OPCION 7: AVANZAR TURNO (CORREGIDO)
 void avanzarTurno(ListaTorres& torres, ListaEnemigos& enemigos, Juego& j) {
     limpiarPantalla();
+    
+    if (!j.partidaActiva) {
+        cout << endl << "  [!] El juego ha terminado. No se puede avanzar turnos." << endl;
+        pausar();
+        return;
+    }
+    
     j.turno++;
     cout << endl;
     cout << "  +========================================+" << endl;
@@ -175,32 +208,35 @@ void avanzarTurno(ListaTorres& torres, ListaEnemigos& enemigos, Juego& j) {
                 hayAtaque = true;
                 cout << "  [" << tor.nombre << "] ataca E#"
                      << ene->dato.id << "  -" << tor.danio
-                     << " vida  => vida: " << ene->dato.vida << endl;
+                     << " vida  => vida restante: " << ene->dato.vida << endl;
             }
             ene = ene->next;
         }
     }
     if (!hayAtaque) cout << "  (Ninguna torre en rango)" << endl;
 
-    // PASO 3: Eliminar muertos / llegaron a base
+    // PASO 3: Eliminar muertos / llegaron a base (CORREGIDO)
     cout << endl << "  [ RESULTADOS ]" << endl;
     NodoEnemigo* cur = enemigos.getFirst();
     while (cur) {
-        NodoEnemigo* sig = cur->next;
+        NodoEnemigo* siguiente = cur->next;  // Guardar referencia al siguiente
+        
         if (cur->dato.vida <= 0) {
             cout << "  [+] E#" << cur->dato.id
                  << " destruido! +" << cur->dato.recompensa << " oro" << endl;
             j.oro += cur->dato.recompensa;
             j.enemigosEliminados++;
             enemigos.eliminar(cur->dato.id);
-        } else if (cur->dato.posicion >= j.longitudRuta) {
+        } 
+        else if (cur->dato.posicion >= j.longitudRuta) {
             cout << "  [!!] E#" << cur->dato.id
                  << " llego a la BASE! -1 vida" << endl;
             j.vidasJugador--;
             j.enemigosLlegaron++;
             enemigos.eliminar(cur->dato.id);
         }
-        cur = sig;
+        
+        cur = siguiente;  // Avanzar al siguiente nodo
     }
 
     // PASO 4: Game Over
@@ -219,8 +255,9 @@ void avanzarTurno(ListaTorres& torres, ListaEnemigos& enemigos, Juego& j) {
          << " | Elim=" << j.enemigosEliminados << endl;
 
     pausar();
+}
 
-    //  OPCION 8: MOSTRAR ENEMIGOS ACTIVOS
+//  OPCION 8: MOSTRAR ENEMIGOS ACTIVOS
 void mostrarEnemigosActivos(ListaEnemigos& enemigos) {
     limpiarPantalla();
     cout << endl << "  === ENEMIGOS ACTIVOS ===" << endl << endl;
