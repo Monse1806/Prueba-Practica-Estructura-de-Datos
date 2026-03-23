@@ -5,8 +5,9 @@
 #include <iomanip>
 #include <string>
 #include <cstdlib>
-#include "estructuras.h"
+#include "Estructuras.h"
 #include "listas.h"
+#include "interfaz.h"
 using namespace std;
 void limpiarPantalla() {
 #ifdef _WIN32
