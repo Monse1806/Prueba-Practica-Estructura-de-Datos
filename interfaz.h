@@ -82,7 +82,7 @@ void dibujarMapa(ListaTorres& torres, ListaEnemigos& enemigos, const Juego& j) {
         cout << endl;
     }
     cout << "  (y)" << endl << endl;
-    cout << "  Leyenda: [T]=Torre  [E]=Enemigo  [S]=Inicio  [B]=Base  [-]=Camino  [.]=Libre" << endl;
+    cout << "  [T]=Torre  [E]=Enemigo  [S]=Inicio  [B]=Base  [-]=Camino  [.]=Escenario" << endl;
 }
 
 // ------------------------------------------------------------
