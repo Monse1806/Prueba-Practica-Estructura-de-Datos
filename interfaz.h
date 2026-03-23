@@ -4,9 +4,8 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include "estructuras.h"
+#include "Estructuras.h"
 #include "listas.h"
-#include "logica.h"
 using namespace std;
 
 // ============================================================
