@@ -219,4 +219,11 @@ void avanzarTurno(ListaTorres& torres, ListaEnemigos& enemigos, Juego& j) {
          << " | Elim=" << j.enemigosEliminados << endl;
 
     pausar();
+
+    //  OPCION 8: MOSTRAR ENEMIGOS ACTIVOS
+void mostrarEnemigosActivos(ListaEnemigos& enemigos) {
+    limpiarPantalla();
+    cout << endl << "  === ENEMIGOS ACTIVOS ===" << endl << endl;
+    enemigos.recorrerAdelante();
+    pausar();
 }
