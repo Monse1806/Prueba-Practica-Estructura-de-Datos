@@ -4,7 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include "estructuras.h"
+#include "Estructuras.h"
 using namespace std;
 
 //  LISTA SECUENCIAL - TORRES
