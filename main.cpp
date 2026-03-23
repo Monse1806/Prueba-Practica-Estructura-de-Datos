@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "Katherine_estructuras.h" 
-#include "Alina_listas.h"          
-#include "Rolando_logica.h"        
-#include "Monse_interfaz.h"        
+#include "Estructuras.h"
+#include "listas.h"
+#include "pruebaR.cpp"
+#include "interfaz.h"   
 
 using namespace std;
 
