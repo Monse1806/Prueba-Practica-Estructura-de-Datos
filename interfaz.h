@@ -35,6 +35,10 @@ int mapaBase[MAP_ROWS][MAP_COLS] = {
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 };
 
+// Declaraciones de funciones auxiliares (definidas en logica.cpp)
+void limpiarPantalla();
+void pausar();
+
 // ------------------------------------------------------------
 //  DIBUJAR MAPA 2D
 // ------------------------------------------------------------
