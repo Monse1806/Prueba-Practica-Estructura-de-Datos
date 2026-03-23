@@ -20,7 +20,7 @@ void mostrarEstadoGeneral(ListaTorres& torres, ListaEnemigos& enemigos, ListaOle
 int main() {
     // Inicializar el juego
     Juego juego;
-    juego.vidasJugador = 10;
+    juego.vidasJugador = 3;
     juego.turno = 0;
     juego.oro = 500;
     juego.enemigosEliminados = 0;
